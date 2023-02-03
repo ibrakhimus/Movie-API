@@ -1,7 +1,7 @@
 const movieListEl = document.querySelector('.movie__list');
 
 async function renderMovies() {
-    const movies = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=68fafaba&s=encanto`);
+    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=68fafaba&s=Curly Sue`);
     const moviesData = await movies.json();
     console.log(moviesData)
 
