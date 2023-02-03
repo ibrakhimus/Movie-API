@@ -135,7 +135,7 @@ header {
     display: flex;
   }
   
-  input {
+  .search__input {
     background-color: #fff;
     border-radius: 20px;
     border: 1px solid #0a1f44;
