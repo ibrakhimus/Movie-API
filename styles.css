@@ -161,8 +161,12 @@ header {
     padding-left: 25px;
   }
 
+  i {
+    background-color: #e20f0f;
+  }
+
   .btn__search {
-    background-color:#e20f0f;
+    background-color:#e20f0f !important;
     cursor: pointer;
     width: 200px;
     height: 70px;
