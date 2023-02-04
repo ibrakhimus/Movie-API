@@ -152,7 +152,7 @@ header {
   .search__input {
     background-color: #fff;
     border-radius: 20px;
-    border: 1px solid #0a1f44;
+    border: none;
     color: #0a1f44;
     display: inline-block;
     height: 70px;
