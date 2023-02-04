@@ -42,15 +42,14 @@ function filterMovies(event) {
 renderMovies(userSearch);
 
 function movieHTML(movie) {
-    return `<div class="movie">
+    return `<div class="movie" onclick="${movie.imdbID}">
     <figure class="movie__img--wrapper">
         <img class="movie__img" src='${movie.Poster}' alt="">
     </figure>
     <div class="movie__description">
         <p class="movie__title">${movie.Title}</p>
-        <p class="movie__para">Type: ${movie.Type} </p>
-        <p class="movie__para">Released: ${movie.Year}</p>
-        <p class="movie__para">imdbID: ${movie.imdbID} </p>
+        <p class="movie__para color">${movie.Type} </p>
+        <p class="movie__para">${movie.Year}</p>
     </div>
 </div>`
 }; 
