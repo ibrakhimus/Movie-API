@@ -1,14 +1,16 @@
 const movieListEl = document.querySelector('.movie__list');
+const userSearch = localStorage.getItem("movieName");
 
-async function renderMovies(id) {
-    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=68fafaba&s=${id}`);
+async function renderMovies(userSearch) {
+    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=68fafaba&s=${userSearch}`);
     const moviesData = await movies.json();
-    console.log(moviesData)
+    const moviesSearch = moviesData.Search;
+    console.log(moviesSearch)
 
      movieListEl.innerHTML = moviesData.Search.map(movie => movieHTML(movie) ).join('');
 }
 
-renderMovies(id);
+renderMovies(userSearch);
 
 function movieHTML(movie) {
     return `<div class="movie">
