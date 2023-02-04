@@ -8,12 +8,12 @@ async function onSearchChange(event) {
     const moviesPosts = await movies.json();
 }
 
-async function main() {
+async function main(id) {
 const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=68fafaba&s=${id}`);
 const moviesPosts = await movies.json();
 }
 
-main(); 
+main(id); 
 
 function showMovies(id) {
     localStorage.setItem("id", id);

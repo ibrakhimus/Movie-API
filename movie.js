@@ -1,6 +1,6 @@
 const movieListEl = document.querySelector('.movie__list');
 
-async function renderMovies() {
+async function renderMovies(id) {
     const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=68fafaba&s=${id}`);
     const moviesData = await movies.json();
     console.log(moviesData)
@@ -8,7 +8,7 @@ async function renderMovies() {
      movieListEl.innerHTML = moviesData.Search.map(movie => movieHTML(movie) ).join('');
 }
 
-renderMovies();
+renderMovies(id);
 
 function movieHTML(movie) {
     return `<div class="movie">
