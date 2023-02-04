@@ -5,6 +5,6 @@ console.log(localStorage)
 function onSearchChange(event) {
     const movieName = event.target.value;
     localStorage.setItem('movieName', movieName);
-    window.location.href = `${window.location.origin}/final%20project/movie.html`
+    window.location.href = `${window.location.origin}/movie.html`
 }
 
