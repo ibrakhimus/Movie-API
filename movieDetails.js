@@ -6,9 +6,7 @@ const movieDetailsEl = document.querySelector('.movie__details')
 async function main(movieTitle) {
     const movies = await fetch(`https://www.omdbapi.com/?apikey=68fafaba&i=${movieTitle}`);
     const moviesData = await movies.json();
-    const movieDetailsHTML = detailsHTML(moviesData);
     movieDetailsEl.innerHTML = moviesData.map(movie => detailsHTML(movie)).join('');
-    movieDetailsEl.innerHTML += movieDetailsHTML;
     
 }
 
