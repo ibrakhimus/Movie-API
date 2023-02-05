@@ -5,22 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/0b77e17707.js" crossorigin="anonymous"></script>
     <script src="./movieDetails.js" defer></script>
     <title>Movie Club</title>
 </head>
 <body>
     <nav>
         <div class="nav__container">
-            <img src="./assets/logo.png" alt="" class="nav__logo">
+            <a href="/index.html">
+                <img src="./assets/logo.png" alt="" class="nav__logo">
+            </a>
             <ul class="nav__links">
-                <li><a href="#" class="nav__link">Home</a></li>
-                <li><a href="#" class="nav__link">Movies</a></li>
+                <li><a href="/index.html" class="nav__link link__hover--effect">Home</a></li>
+                <li><a href="/movie.html" class="nav__link link__hover--effect">Movies</a></li>
                 <li><a href="#" class="nav__link btn__contact">Contact</a></li>
             </ul>
         </div>
     </nav>
     <div class="container">
         <div class="row">
+            <a href="/movie.html">
+             <button class="btn__back"><i class="fa-solid fa-arrow-left"></i>Go Back</button>
+            </a>
             <div class="movie__details">
                 <h2 class="movie__details--title">Title</h2>
                 <div class="movie__wrapper">
@@ -30,18 +36,18 @@
                         </figure>
                     </div>
                     <div class="movie__details--description">
-                        <p class="movie__description--para"><b class="highlight color">Plot:</b> </p>
-                        <p class="movie__description--para"><b class="highlight color">Type:</b> </p>
-                        <p class="movie__description--para"><b class="highlight color">Rated:</b> </p>
-                        <p class="movie__description--para"><b class="highlight color">Genre:</b> </p>
-                        <p class="movie__description--para"><b class="highlight color">Ratings:</b> / 10</p>
-                        <p class="movie__description--para"><b class="highlight color">Votes:</b> </p>
-                        <p class="movie__description--para"><b class="highlight color">Release Date:</b> </p>
+                        <p class="movie__description--para"><b class="highlight red">Plot:</b> </p>
+                        <p class="movie__description--para"><b class="highlight red">Type:</b> </p>
+                        <p class="movie__description--para"><b class="highlight red">Rated:</b> </p>
+                        <p class="movie__description--para"><b class="highlight red">Genre:</b> </p>
+                        <p class="movie__description--para"><b class="highlight red">Ratings:</b> / 10</p>
+                        <p class="movie__description--para"><b class="highlight red">Votes:</b> </p>
+                        <p class="movie__description--para"><b class="highlight red">Release Date:</b> </p>
                     </div>
                 </div>
             </div>
             <div class="similar__movies--wrapper">
-                <h2 class="more__title">More Like This</h2>
+                <h2 class="more__title">More Like <span class="red">This</span></h2>
                 <div class="movie__list">
                     <div class="movie">
                         <figure class="movie__img--wrapper">

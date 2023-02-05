@@ -31,19 +31,23 @@ function detailsHTML(movie) {
                 </div>`
 }
 
-async function similarMovies(movieName) {
+async function similarMovies(currentMovieID, movieName) {
     const movies = await fetch(`https://www.omdbapi.com/?apikey=68fafaba&s=${movieName}`);
     const moviesData = await movies.json();
     const moviesSearch = moviesData.Search;
-    const limitedMovies = moviesSearch.slice(0, 3);
+    const limitedMovies = moviesSearch.filter(movie => movie.imdbID !== currentMovieID).slice(0, 3);
     showMovies = limitedMovies.map((movie) => similarMoviesHTML(movie)).join('');
     MovieListEl.innerHTML =  showMovies;
 }
 
 function similarMoviesHTML(movie) {
+    let poster = movie.Poster;
+    if (poster === 'N/A') {
+        poster = 'http://www.movienewz.com/img/films/poster-holder.jpg';
+    }
     return `<div class="movie" onclick="getTitle('${movie.imdbID}')")>
     <figure class="movie__img--wrapper">
-        <img class="movie__img" src="${movie.Poster}" alt="">
+        <img class="movie__img" src="${poster}" alt="">
     </figure>
     <div class="movie__description">
         <p class="movie__title">${movie.Title}</p>
@@ -59,4 +63,5 @@ function getTitle(title) {
     console.log(title);
 }
 
-similarMovies(movieName);
+const currentMovieID = localStorage.getItem("movieTitle");
+similarMovies(currentMovieID, movieName);

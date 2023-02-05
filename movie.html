@@ -9,14 +9,23 @@
     <title>Movie Club</title>
 </head>
 <body>
+    <nav>
+        <div class="nav__container">
+            <a href="/index.html">
+                <img src="./assets/logo.png" alt="" class="nav__logo">
+            </a>
+            <ul class="nav__links">
+                <li><a href="/index.html" class="nav__link link__hover--effect">Home</a></li>
+                <li><a href="/movie.html" class="nav__link link__hover--effect">Movies</a></li>
+                <li><a href="#" class="nav__link btn__contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
-            <a href="./index.html">
-                <button class="btn__back"><i class="fa-solid fa-arrow-left"> </i>     Back</button>
-             </a>
              <div class="search__container search__container--movie">
                 <input class="search__input search__input--movie" type="text" placeholder="Ex: Cars 3" onchange ="onSearchChange(event)">
-                <button class="btn__search" name='movieName'>
+                <button class="search__btn" name='movieName'>
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>

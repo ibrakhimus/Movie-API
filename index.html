@@ -12,10 +12,12 @@
     <section id="landing">
             <nav>
                 <div class="nav__container">
-                    <img src="./assets/logo.png" alt="" class="nav__logo">
+                    <a href="/index.html">
+                        <img src="./assets/logo.png" alt="" class="nav__logo">
+                    </a>
                     <ul class="nav__links">
-                        <li><a href="#" class="nav__link">Home</a></li>
-                        <li><a href="#" class="nav__link">Movies</a></li>
+                        <li><a href="#" class="nav__link link__hover--effect">Home</a></li>
+                        <li><a href="/movie.html" class="nav__link link__hover--effect">Movies</a></li>
                         <li><a href="#" class="nav__link btn__contact">Contact</a></li>
                     </ul>
                 </div>
@@ -26,9 +28,9 @@
                         <h1 class="header__h1">America's most <span class="red">awarded</span> online movie platform</h1>
                         <h2 class="header__h2">FIND NEW MOVIES TO WATCH ON <span class="red">MOVIE CLUB</span></h2>
                     </div>
-                    <div class="search__container">
+                    <div class="search__container search__container--landing">
                         <input class="search__input" type="text" placeholder="Ex: Cars 3" onchange ="onSearchChange(event)">
-                        <button class="btn__search" name='movieName'>
+                        <button class="search__btn" name='movieName'>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>

@@ -1,9 +1,14 @@
 // http://www.omdbapi.com/?i=tt3896198&apikey=68fafaba
+const searchBtn = document.querySelector('.search__btn');
 
-
-function onSearchChange(event) {
+async function onSearchChange(event) {
     const movieName = event.target.value;
     localStorage.setItem('movieName', movieName);
-    window.location.href = `${window.location.origin}/movie.html`
+
+    searchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+    searchBtn.classList.add("loading");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    window.location.href = `${window.location.origin}/movie.html`;
 }
+
 
