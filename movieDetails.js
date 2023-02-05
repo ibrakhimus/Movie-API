@@ -3,14 +3,14 @@ let movieName = localStorage.getItem("movieName")
 
 const movieDetailsEl = document.querySelector('.movie__details')
 
-async function main(movieTitle) {
+async function movieDetailsRender(movieTitle) {
     const movies = await fetch(`https://www.omdbapi.com/?apikey=68fafaba&i=${movieTitle}`);
     const moviesData = await movies.json();
     movieDetailsEl.innerHTML = moviesData.map(movie => detailsHTML(movie)).join('');
-    
+      console.log(moviesData)
 }
 
-main(movieTitle);
+movieDetailsRender(movieTitle);
 
 
 function detailsHTML(movie) {
