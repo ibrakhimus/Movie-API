@@ -35,7 +35,8 @@ async function similarMovies(movieName) {
     const movies = await fetch(`https://www.omdbapi.com/?apikey=68fafaba&s=${movieName}`);
     const moviesData = await movies.json();
     const moviesSearch = moviesData.Search;
-    showMovies = moviesSearch.map((movie) => similarMoviesHTML(movie)).join('');
+    const limitedMovies = moviesSearch.slice(0, 3);
+    showMovies = limitedMovies.map((movie) => similarMoviesHTML(movie)).join('');
     MovieListEl.innerHTML =  showMovies;
 }
 
@@ -51,3 +52,5 @@ function similarMoviesHTML(movie) {
     </div>
     </div>`
 }
+
+similarMovies(movieName);
