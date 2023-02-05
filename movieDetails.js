@@ -1,17 +1,16 @@
 let movieTitle = localStorage.getItem("movieTitle");
-let movieName = localStorage.getItem("movieName")
+let movieName = localStorage.getItem("movieName");
 
-const movieDetailsEl = document.querySelector('.movie__details')
+const movieDetailsEl = document.querySelector('.movie__details');
+const MovieListEl = document.querySelector('.movie__list');
 
-async function main(movieTitle) {
-    const movies = await fetch(`https://www.omdbapi.com/?apikey=68fafaba&i=${movieTitle}`);
-    const moviesData = await movies.json();
-    movieDetailsEl.innerHTML = moviesData.map(movie => detailsHTML(movie)).join('');
-      console.log(movies)
+async function main(title) {
+    const movies = await fetch(`https://www.omdbapi.com/?apikey=68fafaba&i=${title}`);
+    const movieData = await movies.json();
+    movieDetailsEl.innerHTML = detailsHTML(movieData);
 }
 
 main(movieTitle);
-
 
 function detailsHTML(movie) {
     return `<h2 class="movie__details--title">${movie.Title}</h2>
@@ -26,13 +25,29 @@ function detailsHTML(movie) {
                     <p class="movie__description--para"><b class="highlight color">Type:</b> ${movie.Type}</p>
                     <p class="movie__description--para"><b class="highlight color">Rated:</b> ${movie.Rated}</p>
                     <p class="movie__description--para"><b class="highlight color">Genre:</b> ${movie.Genre}</p>
-                    <p class="movie__description--para"><b class="highlight color">Ratings:</b>${movie.imdbRating} / 10</p>
+                    <p class="movie__description--para"><b class="highlight color">Ratings:</b> ${movie.imdbRating} / 10</p>
                     <p class="movie__description--para"><b class="highlight color">Votes:</b> ${movie.imdbVotes}</p>
                     <p class="movie__description--para"><b class="highlight color">Release Date:</b> ${movie.Released}</p>
                 </div>`
 }
 
-function getTitle(movieTitle) {
-    localStorage.setItem("movieTitle", movieTitle);
-    window.location.href = `${window.location.origin}/movieDetails.html`;
-  }
+async function similarMovies(movieName) {
+    const movies = await fetch(`https://www.omdbapi.com/?apikey=68fafaba&s=${movieName}`);
+    const moviesData = await movies.json();
+    const moviesSearch = moviesData.Search;
+    showMovies = moviesSearch.map((movie) => similarMoviesHTML(movie)).join('');
+    MovieListEl.innerHTML =  showMovies;
+}
+
+function similarMoviesHTML(movie) {
+    return `<div class="movie">
+    <figure class="movie__img--wrapper">
+        <img class="movie__img" src="${movie.Poster}" alt="">
+    </figure>
+    <div class="movie__description">
+        <p class="movie__title">${movie.Title}</p>
+        <p class="movie__para color">${movie.Type}</p>
+        <p class="movie__para">${movie.Year}</p>
+    </div>
+    </div>`
+}
