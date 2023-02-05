@@ -41,7 +41,7 @@ async function similarMovies(movieName) {
 }
 
 function similarMoviesHTML(movie) {
-    return `<div class="movie">
+    return `<div class="movie" onclick="getTitle('${movie.imdbID}')")>
     <figure class="movie__img--wrapper">
         <img class="movie__img" src="${movie.Poster}" alt="">
     </figure>
@@ -51,6 +51,12 @@ function similarMoviesHTML(movie) {
         <p class="movie__para">${movie.Year}</p>
     </div>
     </div>`
+}
+
+function getTitle(title) {
+    localStorage.setItem("movieTitle", title);
+    window.location.href = "movieDetails.html";
+    console.log(title);
 }
 
 similarMovies(movieName);

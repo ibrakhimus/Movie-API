@@ -1,7 +1,7 @@
 const movieListEl = document.querySelector('.movie__list');
 const userSearch = localStorage.getItem("movieName");
 
-async function renderMovies(userSearch, filter) {
+async function renderMovies(userSearch, filter, ) {
     const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=68fafaba&s=${userSearch}`);
     const moviesData = await movies.json();
     const moviesSearch = moviesData.Search;
@@ -46,9 +46,14 @@ function getTitle(movieTitle) {
 renderMovies(userSearch);
 
 function movieHTML(movie) {
+  let poster = movie.Poster;
+    if (poster === 'N/A') {
+        poster = 'http://www.movienewz.com/img/films/poster-holder.jpg';
+    }
+
     return `<div class="movie" onclick="getTitle('${movie.imdbID}')">
     <figure class="movie__img--wrapper">
-        <img class="movie__img" src='${movie.Poster}' alt="">
+        <img class="movie__img" src='${poster}' alt="">
     </figure>
     <div class="movie__description">
         <p class="movie__title">${movie.Title}</p>
@@ -57,6 +62,7 @@ function movieHTML(movie) {
     </div>
 </div>`
 }; 
+
 
 
 setTimeout(() => {

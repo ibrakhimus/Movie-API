@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0b77e17707.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Movie Club</title>
 </head>
@@ -11,8 +12,14 @@
     <div class="container">
         <div class="row">
             <a href="./index.html">
-                <button class="btn__back">Back</button>
+                <button class="btn__back"><i class="fa-solid fa-arrow-left"> </i>     Back</button>
              </a>
+             <div class="search__container search__container--movie">
+                <input class="search__input search__input--movie" type="text" placeholder="Ex: Cars 3" onchange ="onSearchChange(event)">
+                <button class="btn__search" name='movieName'>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
              <div class="filter__wrapper">
                 <h2 class="filter__heading">Movie Club</h2>
                 <select id="filter" onchange="filterMovies(event)">
@@ -37,4 +44,5 @@
     </div>
 </body>
 <script src="movie.js"></script>
+<script src="index.js"></script>
 </html>
