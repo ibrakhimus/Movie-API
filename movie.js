@@ -17,7 +17,6 @@ async function renderMovies(userSearch, filter) {
             : parseInt(b.Year);
           return bYear - aYear;
         });
-        console.log(filteredMovies);
       } else if (filter === "OLD_TO_NEW") {
         moviesSearch.sort((a, b) => {
           const aYear = a.Year.includes("-")
@@ -39,10 +38,15 @@ function filterMovies(event) {
     renderMovies(userSearch, event.target.value);
 }
 
+function getTitle(movieTitle) {
+  localStorage.setItem("movieTitle", movieTitle);
+  window.location.href = `${window.location.origin}/movieDetails.html`;
+}
+
 renderMovies(userSearch);
 
 function movieHTML(movie) {
-    return `<div class="movie" onclick="${movie.imdbID}">
+    return `<div class="movie" onclick="getTitle('${movie.imdbID}')">
     <figure class="movie__img--wrapper">
         <img class="movie__img" src='${movie.Poster}' alt="">
     </figure>
