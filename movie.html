@@ -30,26 +30,26 @@
             <a href="#" class="nav__link btn__contact no-cursor">Contact</a>
           </li>
         </ul>
-      </div>
-      <button class="btn__menu">
+      <button class="btn__menu" onclick="openMenu()">
         <i class="fas fa-bars"></i>
       </button>
       <div class="menu__backdrop">
-        <button class="btn__menu btn__menu--close">
+        <button class="btn__menu btn__menu--close" onclick="closeMenu()">
           <i class="fas fa-times"></i>
         </button>
-        <ul>
+        <ul class="menu__links">
           <li class="menu__list">
-            <a href="/index.html" class="menu__link"></a>Home
+            <a href="/index.html" class="menu__link" onclick="closeMenu()">Home</a>
           </li>
           <li class="menu__list">
-            <a href="/movie.html" class="menu__link"></a>Movies
+            <a href="/movie.html" class="menu__link" onclick="closeMenu()">Movies</a>
           </li>
           <li class="menu__list">
-            <a href="#" class="menu__link no-cursor"></a>Contact
+            <a href="#" class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
           </li>
         </ul>
       </div>
+    </div>
     </nav>
     <div class="container">
       <div class="row">
