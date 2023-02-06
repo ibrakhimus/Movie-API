@@ -721,7 +721,58 @@ header {
   /* Small phones */
   @media (max-width: 480px) {
 
-    .nav__link {
-      margin: 0 10px;
+    .nav__container {
+      padding: 0 30px;
     }
+
+    .search__input {
+      width: 300px;
+    }
+
+    .header__img--wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header__img {
+      width: 80%;
+    }
+
+    /* Movies */
+
+    .movie {
+      width: 100%;
+    }
+
+    /* Movie details */
+
+    .movie__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .movie__details {
+      justify-content: center;
+    }
+
+    .movie__details--title {
+      margin-bottom: 12px;
+    }
+
+    .img__title--wrapper {
+      width: 100%;
+    }
+
+    .movie__details--description {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    .more__title {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
   }

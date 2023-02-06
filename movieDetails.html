@@ -12,16 +12,43 @@
 <body>
     <nav>
         <div class="nav__container">
-            <a href="/index.html">
-                <img src="./assets/logo.png" alt="" class="nav__logo">
-            </a>
-            <ul class="nav__links">
-                <li><a href="/index.html" class="nav__link link__hover--effect">Home</a></li>
-                <li><a href="/movie.html" class="nav__link link__hover--effect">Movies</a></li>
-                <li><a href="#" class="nav__link btn__contact no-cursor">Contact</a></li>
+          <a href="/index.html">
+            <img src="./assets/logo.png" alt="" class="nav__logo" />
+          </a>
+          <ul class="nav__links">
+            <li>
+              <a href="/index.html" class="nav__link link__hover--effect">Home</a>
+            </li>
+            <li>
+              <a href="/movie.html" class="nav__link link__hover--effect"
+                >Movies</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav__link btn__contact no-cursor">Contact</a>
+            </li>
+          </ul>
+          <button class="btn__menu" onclick="openMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="menu__backdrop">
+            <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+              <i class="fas fa-times"></i>
+            </button>
+            <ul class="menu__links">
+              <li class="menu__list">
+                <a href="/index.html" class="menu__link" onclick="closeMenu()">Home</a>
+              </li>
+              <li class="menu__list">
+                <a href="/movie.html" class="menu__link" onclick="closeMenu()">Movies</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
+              </li>
             </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
     <div class="container">
         <div class="row">
             <a href="/movie.html">
@@ -47,7 +74,7 @@
                 </div>
             </div>
             <div class="similar__movies--wrapper">
-                <h2 class="more__title">More Like <span class="red">This</span></h2>
+                <h2 class="more__title">More Like&nbsp;<span class="red">This</span></h2>
                 <div class="movie__list">
                     <div class="movie">
                         <figure class="movie__img--wrapper">
@@ -65,5 +92,6 @@
         </div>
     </div>
 
+    <script src="index.js"></script>
 </body>
 </html>
