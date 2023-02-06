@@ -725,6 +725,14 @@ header {
       padding: 0 30px;
     }
 
+    .header__h1 {
+      font-size: 36px;
+    }
+
+    .header__h2 {
+      font-size: 22px;
+    }
+
     .search__input {
       width: 300px;
     }
