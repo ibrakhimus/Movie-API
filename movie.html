@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/0b77e17707.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/0b77e17707.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
     <title>Movie Club</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="nav__container">
-            <a href="/index.html">
-                <img src="./assets/logo.png" alt="" class="nav__logo">
-            </a>
-            <ul class="nav__links">
-                <li><a href="/index.html" class="nav__link link__hover--effect">Home</a></li>
-                <li><a href="/movie.html" class="nav__link link__hover--effect">Movies</a></li>
-                <li><a href="#" class="nav__link btn__contact">Contact</a></li>
-            </ul>
-        </div>
+      <div class="nav__container">
+        <a href="/index.html">
+          <img src="./assets/logo.png" alt="" class="nav__logo" />
+        </a>
+        <ul class="nav__links">
+          <li>
+            <a href="/index.html" class="nav__link link__hover--effect">Home</a>
+          </li>
+          <li>
+            <a href="/movie.html" class="nav__link link__hover--effect"
+              >Movies</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav__link btn__contact no-cursor">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <button class="btn__menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="menu__backdrop">
+        <button class="btn__menu btn__menu--close">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li class="menu__list">
+            <a href="/index.html" class="menu__link"></a>Home
+          </li>
+          <li class="menu__list">
+            <a href="/movie.html" class="menu__link"></a>Movies
+          </li>
+          <li class="menu__list">
+            <a href="#" class="menu__link no-cursor"></a>Contact
+          </li>
+        </ul>
+      </div>
     </nav>
     <div class="container">
-        <div class="row">
-             <div class="search__container search__container--movie">
-                <input class="search__input search__input--movie" type="text" placeholder="Ex: Cars 3" onchange ="onSearchChange(event)">
-                <button class="search__btn" name='movieName'>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </div>
-             <div class="filter__wrapper">
-                <h2 class="filter__heading">Movie Club</h2>
-                <select id="filter" onchange="filterMovies(event)">
-                    <option value="" disabled selected>Sort</option>
-                    <option value="NEW_TO_OLD">Year, New to Old</option>
-                    <option value="OLD_TO_NEW">Year, Old to New</option>
-                </select>
-            </div>
-            <div class="movie__list">
-                <div class="movie">
-                    <figure class="movie__img--wrapper">
-                        <img class="movie__img" src="" alt="">
-                    </figure>
-                <div class="movie__description">
-                    <p class="movie__title">Title</p>
-                    <p class="movie__para color">Type</p>
-                    <p class="movie__para">Year</p>
-                </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="search__container search__container--movie">
+          <input
+            class="search__input search__input--movie"
+            type="text"
+            placeholder="Ex: Cars 3"
+            onchange="onSearchChange(event)"
+          />
+          <button class="search__btn" name="movieName">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
+        <div class="filter__wrapper">
+          <h2 class="filter__heading">Movie Club</h2>
+          <select id="filter" onchange="filterMovies(event)">
+            <option value="" disabled selected>Sort</option>
+            <option value="NEW_TO_OLD">Year, New to Old</option>
+            <option value="OLD_TO_NEW">Year, Old to New</option>
+          </select>
+        </div>
+        <div class="movie__list">
+          <div class="movie">
+            <figure class="movie__img--wrapper">
+              <img class="movie__img" src="" alt="" />
+            </figure>
+            <div class="movie__description">
+              <p class="movie__title">Title</p>
+              <p class="movie__para color">Type</p>
+              <p class="movie__para">Year</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-<script src="movie.js"></script>
-<script src="index.js"></script>
+  </body>
+  <script src="movie.js"></script>
+  <script src="index.js"></script>
 </html>
